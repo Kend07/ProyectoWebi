@@ -26,8 +26,94 @@ seleccionarProblematica.addEventListener('change', function () {
   mostrarPreview(this.value);
 });
 
+function mostrarError(id, mensaje) {
+  var campo = document.getElementById(id);
+  var span = document.getElementById('error-' + id);
+  if (!span) return;
+  if (mensaje) {
+    span.textContent = mensaje;
+    span.classList.add('visible');
+    campo.classList.add('error');
+  } else {
+    span.textContent = '';
+    span.classList.remove('visible');
+    campo.classList.remove('error');
+  }
+}
+
+function validarCampo(id) {
+  var campo = document.getElementById(id);
+  var valor = campo.value.trim();
+
+  if (id === 'nombre') {
+    if (!valor) return mostrarError(id, 'El nombre es obligatorio.');
+    if (valor.length < 3) return mostrarError(id, 'El nombre debe tener al menos 3 caracteres.');
+    mostrarError(id, '');
+  }
+
+  if (id === 'correo') {
+    var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!valor) return mostrarError(id, 'El correo es obligatorio.');
+    if (!regex.test(valor)) return mostrarError(id, 'Ingresá un correo válido.');
+    mostrarError(id, '');
+  }
+
+  if (id === 'provincia') {
+    if (!valor) return mostrarError(id, 'Seleccioná una provincia.');
+    mostrarError(id, '');
+  }
+
+  if (id === 'problematica') {
+    if (!valor) return mostrarError(id, 'Seleccioná una problemática.');
+    mostrarError(id, '');
+  }
+
+  if (id === 'contribucion') {
+    if (!valor) return mostrarError(id, 'Seleccioná un tipo de contribución.');
+    mostrarError(id, '');
+  }
+
+  if (id === 'fecha') {
+    if (!valor) return mostrarError(id, 'La fecha es obligatoria.');
+    mostrarError(id, '');
+  }
+}
+
+// Escuchar cambios en cada campo para validar en tiempo real
+['nombre', 'correo', 'provincia', 'problematica', 'contribucion', 'fecha'].forEach(function (id) {
+  var campo = document.getElementById(id);
+  if (campo) {
+    campo.addEventListener('input', function () { validarCampo(id); });
+    campo.addEventListener('change', function () { validarCampo(id); });
+    campo.addEventListener('blur', function () { validarCampo(id); });
+  }
+});
+
 document.getElementById('form-inscripcion').addEventListener('submit', function (e) {
   e.preventDefault();
+
+  // Validar todos los campos antes de guardar
+  var camposObligatorios = ['nombre', 'correo', 'provincia', 'problematica', 'contribucion', 'fecha'];
+  var hayError = false;
+
+  camposObligatorios.forEach(function (id) {
+    validarCampo(id);
+    var span = document.getElementById('error-' + id);
+    if (span && span.classList.contains('visible')) {
+      hayError = true;
+    }
+  });
+
+  if (hayError) {
+    Toastify({
+      text: 'Por favor corregí los errores antes de continuar.',
+      duration: 3000,
+      gravity: 'bottom',
+      position: 'right',
+      style: { background: '#E76F51' }
+    }).showToast();
+    return;
+  }
 
   var registro = {
     id: Date.now(),
@@ -114,7 +200,37 @@ function cargarRegistros() {
   });
 }
 
-fetch('jsonData/problematicas.json')
+function limpiarTodosLosRegistros() {
+  Swal.fire({
+    title: '¿Eliminar todas las inscripciones?',
+    text: 'Esta acción no se puede deshacer.',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Sí, eliminar todo',
+    cancelButtonText: 'Cancelar',
+    confirmButtonColor: '#E76F51',
+    cancelButtonColor: '#1B4332'
+  }).then(function (result) {
+    if (result.isConfirmed) {
+      localStorage.removeItem('woodnation_inscripciones');
+      Toastify({
+        text: 'Todos los registros fueron eliminados.',
+        duration: 2500,
+        gravity: 'bottom',
+        position: 'right',
+        style: { background: '#E76F51' }
+      }).showToast();
+      cargarRegistros();
+    }
+  });
+}
+
+var btnLimpiar = document.getElementById('btn-limpiar-todo');
+if (btnLimpiar) {
+  btnLimpiar.addEventListener('click', limpiarTodosLosRegistros);
+}
+
+fetch('data/problematicas.json')
   .then(function (r) { return r.json(); })
   .then(function (data) {
     datosProblematicas = data;
