@@ -1,3 +1,9 @@
+document.querySelectorAll('.menu a').forEach(function (enlace) {
+  if (enlace.href === window.location.href) {
+    enlace.classList.add('activo');
+  }
+});
+
 var problemData = [];
 var contenedor = document.getElementById('contenedor-cards');
 var searchInput = document.getElementById('search-problemas');
