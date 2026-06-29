@@ -344,3 +344,137 @@ body {
   color: #2E2E2E;
   padding: 24px;
 }
+
+
+/*============================================================
+  MEDIA QUERIES - RESPONSIVE
+  ============================================================ */
+
+@media (max-width: 768px) {
+
+  /* ---------- HEADER Y MENÚ ---------- */
+  .header {
+    flex-direction: column;   /* logo arriba, menú abajo */
+    gap: 12px;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .menu a {
+    margin-left: 12px;        /* menos espacio entre links */
+    font-size: 0.9rem;
+  }
+
+  /* ---------- BANNER ---------- */
+  .banner {
+    padding: 48px 16px;
+  }
+
+  .banner h1 {
+    font-size: 1.6rem;
+  }
+
+  /* ---------- SECCIONES ---------- */
+  .section {
+    padding: 40px 16px;
+  }
+
+  .section h2 {
+    font-size: 1.4rem;
+  }
+
+  /* ---------- TARJETAS (estadísticas y zonas) ---------- */
+  .card {
+    flex-direction: column;   /* tarjetas apiladas verticalmente */
+    align-items: center;
+  }
+
+  .cards {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  /* ---------- TARJETAS DE PROBLEMÁTICAS Y ESPECIES ---------- */
+  .card-problem {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  /* ---------- FORMULARIO Y VISTA PREVIA ---------- */
+  .form-preview {
+    flex-direction: column;   /* formulario arriba, preview abajo */
+    gap: 24px;
+  }
+
+  .form-left {
+    max-width: 100%;
+  }
+
+  .preview-right {
+    max-width: 100%;
+    position: static;         /* quita el sticky en celular */
+    width: 100%;
+  }
+
+  .preview-card {
+    max-width: 100% !important;
+  }
+
+  /* ---------- TABLA DE REGISTROS ---------- */
+  .item-registro {
+    flex-direction: column;   /* info arriba, botón de eliminar abajo */
+    align-items: flex-start;
+  }
+
+  .btn-eliminar {
+    align-self: flex-end;     /* botón de eliminar a la derecha */
+  }
+
+  /* ---------- BUSCADOR ---------- */
+  .search-input {
+    max-width: 100%;
+  }
+
+  /* ---------- BOTONES EN TARJETAS ---------- */
+  .actions {
+    flex-direction: column;
+  }
+
+  .actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+}
+
+/*============================================================
+  PANTALLAS MUY PEQUEÑAS (celulares angostos, menos de 480px)
+  ============================================================ */
+
+@media (max-width: 480px) {
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .menu a {
+    margin-left: 8px;
+    font-size: 0.85rem;
+  }
+
+  .banner h1 {
+    font-size: 1.3rem;
+  }
+
+  .number {
+    font-size: 2rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+}
+
+
