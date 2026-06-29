@@ -518,3 +518,19 @@ body {
     width: 100%;
   }
 }
+
+.error-msg {
+  color: #E76F51;
+  font-size: 0.82rem;
+  margin-top: 4px;
+  display: none;
+}
+.error-msg.visible {
+  display: block;
+}
+.space input.error,
+.space select.error,
+.space textarea.error {
+  border-color: #E76F51;
+}
+
