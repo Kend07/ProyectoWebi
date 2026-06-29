@@ -6,7 +6,7 @@
   <title>WoodNation | Inscripción</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -33,11 +33,13 @@
             <div class="space">
               <label for="nombre">Nombre completo</label>
               <input type="text" id="nombre" required>
+                <span class="error-msg" id="error-nombre"></span>
             </div>
 
             <div class="space">
               <label for="correo">Correo electrónico</label>
               <input type="email" id="correo" required>
+                <span class="error-msg" id="error-correo"></span>
             </div>
 
             <div class="space">
@@ -52,6 +54,7 @@
                 <option>Puntarenas</option>
                 <option>Limón</option>
               </select>
+                <span class="error-msg" id="error-provincia"></span>
             </div>
 
             <div class="space">
@@ -59,6 +62,7 @@
               <select id="problematica" required>
                 <option value="">Seleccione una problemática</option>
               </select>
+                <span class="error-msg" id="error-problematica"></span>
             </div>
 
             <div class="space">
@@ -71,11 +75,13 @@
                 <option>Difusión y educación ambiental</option>
                 <option>Transporte y logística</option>
               </select>
+                <span class="error-msg" id="error-contribucion"></span>
             </div>
 
             <div class="space">
               <label for="fecha">Fecha disponible</label>
               <input type="date" id="fecha" required>
+                <span class="error-msg" id="error-fecha"></span>
             </div>
 
             <div class="space">
@@ -95,11 +101,16 @@
     </section>
 
     <section class="section light-background" data-aos="fade-up">
-      <h2>Mis inscripciones</h2>
-      <div id="contenedor-registros">
-        <p class="empty">No hay inscripciones registradas aún.</p>
-      </div>
-    </section>
+  <h2>Mis inscripciones</h2>
+  <div class="center" style="margin-bottom: 16px;">
+    <button id="btn-limpiar-todo" class="btn btn-eliminar">
+      Eliminar todos los registros
+    </button>
+  </div>
+    <div id="contenedor-registros">
+      <p class="empty">No hay inscripciones registradas aún.</p>
+    </div>
+  </section>
   </main>
 
   <footer class="footer">
