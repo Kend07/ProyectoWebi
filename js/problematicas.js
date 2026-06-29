@@ -34,7 +34,7 @@ function filtrar() {
 
 searchInput.addEventListener('keyup', filtrar);
 
-fetch('jsonData/problematicas.json')
+fetch('data/problematicas.json')
   .then(function (r) { return r.json(); })
   .then(function (data) {
     problemData = data;
