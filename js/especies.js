@@ -2,6 +2,8 @@ var especiesData = [];
 var contenedor = document.getElementById('contenedor-especies');
 var searchInput = document.getElementById('search-especies');
 var noResults = document.getElementById('no-results-especies');
+var filtroZona = document.getElementById('filtro-zona');
+var filtroEstado = document.getElementById('filtro-estado');
 
 function limpiarTilde(str) {
   return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
@@ -9,12 +11,20 @@ function limpiarTilde(str) {
 
 function filtrar() {
   var termino = limpiarTilde(searchInput.value);
+  var zonaSeleccionada = filtroZona ? limpiarTilde(filtroZona.value) : '';
+  var estadoSeleccionado = filtroEstado ? limpiarTilde(filtroEstado.value) : '';
+
   var cards = contenedor.querySelectorAll('.cards');
   var count = 0;
 
   cards.forEach(function (card) {
     var texto = limpiarTilde(card.textContent);
-    if (!termino || texto.indexOf(termino) !== -1) {
+
+    var coincideTexto = !termino || texto.indexOf(termino) !== -1;
+    var coincideZona = !zonaSeleccionada || texto.indexOf(zonaSeleccionada) !== -1;
+    var coincideEstado = !estadoSeleccionado || texto.indexOf(estadoSeleccionado) !== -1;
+
+    if (coincideTexto && coincideZona && coincideEstado) {
       card.classList.remove('hidden');
       card.removeAttribute('data-aos');
       card.style.opacity = '1';
@@ -25,19 +35,28 @@ function filtrar() {
     }
   });
 
-  if (count === 0) {
-    noResults.classList.remove('hidden');
-  } else {
-    noResults.classList.add('hidden');
-  }
+  noResults.classList.toggle('hidden', count !== 0);
 }
 
 searchInput.addEventListener('keyup', filtrar);
+if (filtroZona) filtroZona.addEventListener('change', filtrar);
+if (filtroEstado) filtroEstado.addEventListener('change', filtrar);
 
-fetch('jsonData/especies.json')
+fetch('data/especies.json')
   .then(function (r) { return r.json(); })
   .then(function (data) {
     especiesData = data;
+
+    var zonas = [];
+data.forEach(function (e) {
+  if (zonas.indexOf(e.zona) === -1) zonas.push(e.zona);
+});
+zonas.forEach(function (z) {
+  var op = document.createElement('option');
+  op.value = z;
+  op.textContent = z;
+  filtroZona.appendChild(op);
+});
 
     data.forEach(function (e) {
       var card = document.createElement('div');
