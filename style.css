@@ -11,6 +11,7 @@ body {
   background-color: #f5f7f2;
 }
 
+/* Header */
 .header {
   display: flex;
   justify-content: space-between;
@@ -37,6 +38,7 @@ body {
   text-decoration: underline;
 }
 
+/* Banner principal */
 .banner {
   text-align: center;
   padding: 80px 24px;
@@ -53,6 +55,7 @@ body {
   margin: 0 auto 24px auto;
 }
 
+/* Botón reutilizable */
 .btn {
   display: inline-block;
   background-color: #1b4332;
@@ -69,6 +72,7 @@ body {
   background-color: #2d6a4f;
 }
 
+/* Secciones */
 .section {
   padding: 60px 24px;
   max-width: 1100px;
@@ -105,6 +109,7 @@ body {
   margin-bottom: 16px;
 }
 
+/* Tarjetas */
 .card {
   display: flex;
   justify-content: center;
@@ -141,6 +146,7 @@ body {
   text-align: center;
 }
 
+/* Footer */
 .footer {
   text-align: center;
   padding: 24px;
@@ -148,6 +154,7 @@ body {
   color: #ffffff;
 }
 
+/* Tarjetas de problemáticas y especies */
 .card-problem {
   width: 300px;
   text-align: left;
@@ -208,6 +215,7 @@ body {
   padding: 8px 16px;
 }
 
+/* Naranja para acciones destructivas */
 .btn-eliminar {
   background-color: #E76F51;
   font-size: 0.8rem;
@@ -215,6 +223,7 @@ body {
   white-space: nowrap;
 }
 
+/* Formulario con vista previa al costado */
 .form-preview {
   display: flex;
   gap: 40px;
@@ -229,6 +238,7 @@ body {
   min-width: 0;
 }
 
+/* La vista previa se queda fija al hacer scroll */
 .preview-right {
   flex: 1;
   max-width: 350px;
@@ -275,6 +285,7 @@ body {
   resize: vertical;
 }
 
+/* Registros guardados */
 .table-registros {
   max-width: 700px;
   margin: 0 auto;
@@ -311,6 +322,7 @@ body {
   margin-bottom: 8px;
 }
 
+/* Buscador */
 .search-input {
   display: block;
   width: 100%;
@@ -345,26 +357,21 @@ body {
   padding: 24px;
 }
 
-/*============================================================
-  MEDIA QUERIES - RESPONSIVE
-  ============================================================ */
-
+/* Responsive — tablets y celulares */
 @media (max-width: 768px) {
 
-  /* ---------- HEADER Y MENÚ ---------- */
   .header {
-    flex-direction: column;   /* logo arriba, menú abajo */
+    flex-direction: column;
     gap: 12px;
     padding: 16px;
     text-align: center;
   }
 
   .menu a {
-    margin-left: 12px;        /* menos espacio entre links */
+    margin-left: 12px;
     font-size: 0.9rem;
   }
 
-  /* ---------- BANNER ---------- */
   .banner {
     padding: 48px 16px;
   }
@@ -373,7 +380,6 @@ body {
     font-size: 1.6rem;
   }
 
-  /* ---------- SECCIONES ---------- */
   .section {
     padding: 40px 16px;
   }
@@ -382,9 +388,9 @@ body {
     font-size: 1.4rem;
   }
 
-  /* ---------- TARJETAS (estadísticas y zonas) ---------- */
+  /* Tarjetas apiladas en celular */
   .card {
-    flex-direction: column;   /* tarjetas apiladas verticalmente */
+    flex-direction: column;
     align-items: center;
   }
 
@@ -393,15 +399,14 @@ body {
     max-width: 400px;
   }
 
-  /* ---------- TARJETAS DE PROBLEMÁTICAS Y ESPECIES ---------- */
   .card-problem {
     width: 100%;
     max-width: 400px;
   }
 
-  /* ---------- FORMULARIO Y VISTA PREVIA ---------- */
+  /* Formulario y vista previa apilados */
   .form-preview {
-    flex-direction: column;   /* formulario arriba, preview abajo */
+    flex-direction: column;
     gap: 24px;
   }
 
@@ -411,7 +416,7 @@ body {
 
   .preview-right {
     max-width: 100%;
-    position: static;         /* quita el sticky en celular */
+    position: static;
     width: 100%;
   }
 
@@ -419,22 +424,19 @@ body {
     max-width: 100% !important;
   }
 
-  /* ---------- TABLA DE REGISTROS ---------- */
   .item-registro {
-    flex-direction: column;   /* info arriba, botón de eliminar abajo */
+    flex-direction: column;
     align-items: flex-start;
   }
 
   .btn-eliminar {
-    align-self: flex-end;     /* botón de eliminar a la derecha */
+    align-self: flex-end;
   }
 
-  /* ---------- BUSCADOR ---------- */
   .search-input {
     max-width: 100%;
   }
 
-  /* ---------- BOTONES EN TARJETAS ---------- */
   .actions {
     flex-direction: column;
   }
@@ -446,10 +448,7 @@ body {
 
 }
 
-/*============================================================
-  PANTALLAS MUY PEQUEÑAS (celulares angostos, menos de 480px)
-  ============================================================ */
-
+/* Responsive — celulares muy angostos */
 @media (max-width: 480px) {
 
   .logo {
@@ -476,14 +475,14 @@ body {
 
 }
 
-/* ---------- PÁGINA ACTIVA EN EL MENÚ ---------- */
+/* Página activa en el menú — el JS agrega esta clase */
 .menu a.activo {
   text-decoration: underline;
   font-weight: bold;
   color: #95D5B2;
 }
 
-/* ---------- FILTROS EN PÁGINA DE ESPECIES ---------- */
+/* Filtros de especies lado a lado */
 .filtros {
   display: flex;
   justify-content: center;
@@ -492,7 +491,6 @@ body {
   margin-bottom: 32px;
 }
 
-/* ---------- ENLACE TIPO BOTÓN EN TARJETAS DE ZONAS ---------- */
 .btn-link {
   display: inline-block;
   margin-top: 12px;
@@ -506,7 +504,6 @@ body {
   text-decoration: underline;
 }
 
-/* ---------- RESPONSIVO PARA FILTROS ---------- */
 @media (max-width: 768px) {
   .filtros {
     flex-direction: column;
@@ -519,18 +516,20 @@ body {
   }
 }
 
+/* Validación del formulario */
 .error-msg {
   color: #E76F51;
   font-size: 0.82rem;
   margin-top: 4px;
   display: none;
 }
+
 .error-msg.visible {
   display: block;
 }
+
 .space input.error,
 .space select.error,
 .space textarea.error {
   border-color: #E76F51;
 }
-
