@@ -28,14 +28,29 @@ body {
   text-decoration: none;
 }
 
-.menu a {
-  color: #ffffff;
-  text-decoration: none;
-  margin-left: 24px;
+.logo img {
+  height: 48px;
+  width: auto;
+  display: block;
 }
 
-.menu a:hover {
-  text-decoration: underline;
+.menu {
+  display: flex;
+  gap: 8px;
+}
+
+.menu .btn {
+  background-color: #52b788;
+  color: #ffffff;
+  padding: 8px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  margin-left: 0;
+}
+
+.menu .btn:hover {
+  background-color: #40916c;
 }
 
 /* Banner principal */
@@ -476,10 +491,9 @@ body {
 }
 
 /* Página activa en el menú — el JS agrega esta clase */
-.menu a.activo {
-  text-decoration: underline;
+.menu .btn.activo {
+  background-color: #40916c;
   font-weight: bold;
-  color: #95D5B2;
 }
 
 /* Filtros de especies lado a lado */
