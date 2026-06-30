@@ -26,7 +26,7 @@
       "Cristóbal (Platymiscium pinnatum)",
       "Guayacán (Tabebuia guayacan)"
     ],
-    "imagen": "assets/zonas/zona-norte.webp"
+    "imagen": "assets/images/zonas/zona-norte.webp"
   },
   {
     "id": 2,
@@ -55,7 +55,7 @@
       "Guapinol (Hymenaea courbaril)",
       "Cocobolo (Dalbergia retusa)"
     ],
-    "imagen": "assets/zonas/guanacaste.jpg"
+    "imagen": "assets/images/zonas/guanacaste.jpg"
   },
   {
     "id": 3,
@@ -84,7 +84,7 @@
       "Poro (Erythrina poeppigiana)",
       "Mango (Mangifera indica)"
     ],
-    "imagen": "assets/zonas/valle-central.jpg"
+    "imagen": "assets/images/zonas/valle-central.jpg"
   },
   {
     "id": 4,
@@ -113,6 +113,6 @@
       "Sándalo (Myroxylon balsamum)",
       "Nazareno (Peltogyne purpurea)"
     ],
-    "imagen": "assets/zonas/mineria-zona-sur.jpg"
+    "imagen": "assets/images/zonas/mineria-zona-sur.jpg"
   }
 ]
