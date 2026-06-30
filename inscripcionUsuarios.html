@@ -10,6 +10,7 @@
 </head>
 <body>
 
+  <!-- Barra de navegación superior -->
   <header class="header">
     <a href="index.html" class="logo">WoodNation</a>
     <nav class="menu">
@@ -21,8 +22,11 @@
   </header>
 
   <main>
+
+    <!-- Formulario de inscripción con vista previa al costado -->
     <section class="section" data-aos="fade-up">
       <h2>Formulario de inscripción</h2>
+      <!-- El subtítulo cambia dinámicamente si viene desde una problemática -->
       <p class="subtitle" id="subtitulo-form">
         Regístrate para participar en iniciativas de reforestación.
       </p>
@@ -30,16 +34,18 @@
       <div class="form-preview">
         <div class="form-left">
           <form id="form-inscripcion" class="form">
+
             <div class="space">
               <label for="nombre">Nombre completo</label>
               <input type="text" id="nombre" required>
-                <span class="error-msg" id="error-nombre"></span>
+              <!-- Mensaje de error que aparece si el campo no es válido -->
+              <span class="error-msg" id="error-nombre"></span>
             </div>
 
             <div class="space">
               <label for="correo">Correo electrónico</label>
               <input type="email" id="correo" required>
-                <span class="error-msg" id="error-correo"></span>
+              <span class="error-msg" id="error-correo"></span>
             </div>
 
             <div class="space">
@@ -54,15 +60,16 @@
                 <option>Puntarenas</option>
                 <option>Limón</option>
               </select>
-                <span class="error-msg" id="error-provincia"></span>
+              <span class="error-msg" id="error-provincia"></span>
             </div>
 
+            <!-- Las opciones de problemática se cargan desde el JSON -->
             <div class="space">
               <label for="problematica">Problemática de interés</label>
               <select id="problematica" required>
                 <option value="">Seleccione una problemática</option>
               </select>
-                <span class="error-msg" id="error-problematica"></span>
+              <span class="error-msg" id="error-problematica"></span>
             </div>
 
             <div class="space">
@@ -75,13 +82,13 @@
                 <option>Difusión y educación ambiental</option>
                 <option>Transporte y logística</option>
               </select>
-                <span class="error-msg" id="error-contribucion"></span>
+              <span class="error-msg" id="error-contribucion"></span>
             </div>
 
             <div class="space">
               <label for="fecha">Fecha disponible</label>
               <input type="date" id="fecha" required>
-                <span class="error-msg" id="error-fecha"></span>
+              <span class="error-msg" id="error-fecha"></span>
             </div>
 
             <div class="space">
@@ -92,25 +99,30 @@
             <div class="center">
               <button type="submit" class="btn">Registrar inscripción</button>
             </div>
+
           </form>
         </div>
+
+        <!-- Vista previa de la problemática seleccionada -->
         <div class="preview-right" id="preview-card">
           <div class="preview-placeholder">Seleccione una problemática</div>
         </div>
       </div>
     </section>
 
+    <!-- Lista de inscripciones guardadas en localStorage -->
     <section class="section light-background" data-aos="fade-up">
-  <h2>Mis inscripciones</h2>
-  <div class="center" style="margin-bottom: 16px;">
-    <button id="btn-limpiar-todo" class="btn btn-eliminar">
-      Eliminar todos los registros
-    </button>
-  </div>
-    <div id="contenedor-registros">
-      <p class="empty">No hay inscripciones registradas aún.</p>
-    </div>
-  </section>
+      <h2>Mis inscripciones</h2>
+      <div class="center" style="margin-bottom: 16px;">
+        <button id="btn-limpiar-todo" class="btn btn-eliminar">
+          Eliminar todos los registros
+        </button>
+      </div>
+      <div id="contenedor-registros">
+        <p class="empty">No hay inscripciones registradas aún.</p>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
