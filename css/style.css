@@ -516,16 +516,25 @@ body {
 
 }
 
-/* Responsive — celulares muy angostos */
+/* Responsive — celulares angostos (Móvil M y menores) */
 @media (max-width: 480px) {
 
   .logo {
     font-size: 1.2rem;
   }
 
-  .menu a {
-    margin-left: 8px;
-    font-size: 0.85rem;
+  .logo img {
+    height: 36px;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .menu .btn {
+    padding: 6px 10px;
+    font-size: 0.8rem;
   }
 
   .banner h1 {
@@ -539,6 +548,29 @@ body {
   .btn {
     width: 100%;
     text-align: center;
+  }
+
+}
+
+/* Responsive — celulares muy angostos (Móvil S) */
+@media (max-width: 360px) {
+
+  .header {
+    padding: 10px 8px;
+    gap: 8px;
+  }
+
+  .logo img {
+    height: 30px;
+  }
+
+  .menu {
+    gap: 4px;
+  }
+
+  .menu .btn {
+    padding: 5px 8px;
+    font-size: 0.75rem;
   }
 
 }
