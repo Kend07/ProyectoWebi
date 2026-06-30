@@ -4,12 +4,37 @@
 El nombre elegido para nuestra página web es WoodNation, el nombre busca fomentar la reforestación de manera nacional. Dicho nombre representa la idea de un país unido en torno a la protección y recuperación de sus bosques. Se relaciona directamente con la solución porque nuestra plataforma busca informar sobre la deforestación, dar visibilidad a las zonas y especies afectadas, y motivar a las personas a participar en la reforestación, fortaleciendo ese sentido de "nación verde".
 
 
-| Nombre Completo             | Correo Institucional         |  Responsabilidad                                     |    
-| --------                    | -------                      | -------                                              |
-| Travis Christman Gutierrez  | lachristmangu@est.utn.ac.cr  | Programación en JavaScript y apoyo en el diseño CSS  |
-| Kendall Guzman Leiva        | keguzmanle@est.utn.ac.cr     | Estructura HTML y diseño CSS de las páginas          |
+| Nombre Completo             | Correo Institucional        
+| --------                    | -------                      
+| Travis Christman Gutierrez  | lachristmangu@est.utn.ac.cr  
+| Kendall Guzman Leiva        | keguzmanle@est.utn.ac.cr     
 
 
+
+# 📋 Lista de Tareas
+
+| Tarea | Encargado | Estado |
+|-------|-----------|:------:|
+| Creación HTML de las páginas del sitio, como base para empezar el proyecto | Kendall Josue Guzman | ✅ |
+| Creación de las clases CSS en `style.css` | Kendall Josue Guzman / Lance Travis Christman | ✅ |
+| Agregar data como archivos JSON (especies, problemáticas) | Kendall Josue Guzman | ✅ |
+| Carpeta `assets` (imágenes a usar en el proyecto) | Kendall Josue Guzman | ✅ |
+| Implementación de Media Query | Lance Travis Christman | ✅ |
+| Creación de archivos `.js` con las funciones necesarias para las inscripciones, problemáticas, especies y la página de inicio | Kendall Josue Guzman | ✅ |
+| Implementar uso de `localStorage` para guardar las inscripciones realizadas hasta el momento | Kendall Josue Guzman | ✅ |
+| Agregación de estilos de error en `style.css` | Lance Travis Christman | ✅ |
+| Agregación de sistema de filtros de búsqueda en especies y problemáticas | Lance Travis Christman | ✅ |
+| Sistema de estadísticas | Lance Travis Christman | ✅ |
+| Documentación del código | Kendall Josue Guzman / Lance Travis Christman | ✅ |
+| Creación del logo | Kendall Josue Guzman | ✅ |
+
+## Estado del Proyecto
+
+- **Total de tareas:** 12
+- **Completadas:** 12 ✅
+- **Pendientes:** 0 🎉
+
+> Todas las tareas asignadas para esta etapa del proyecto han sido completadas exitosamente.
 
 Woodnation será un sitio web tanto interactivo como informativo, enfocado a concientizar a la población costarricense sobre problemáticas de deforestación, así mismo promoviendo la participación ciudadana en actividades y eventos de reforestación.
 El objetivo principal del sistema es brindar información sobre las zonas afectadas por esta problemática, especies de árboles en peligro y también que puedan utilizarse para reforestar el área. Seguidamente, un objetivo secundario es mostrar a las personas que pueden realizar para contribuir en la recuperación de los bosques
