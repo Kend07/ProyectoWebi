@@ -34,7 +34,7 @@ El nombre elegido para nuestra página web es WoodNation, el nombre busca foment
 - **Completadas:** 12 ✅
 - **Pendientes:** 0 🎉
 
-> Todas las tareas asignadas para esta etapa del proyecto han sido completadas exitosamente.
+
 
 Woodnation será un sitio web tanto interactivo como informativo, enfocado a concientizar a la población costarricense sobre problemáticas de deforestación, así mismo promoviendo la participación ciudadana en actividades y eventos de reforestación.
 El objetivo principal del sistema es brindar información sobre las zonas afectadas por esta problemática, especies de árboles en peligro y también que puedan utilizarse para reforestar el área. Seguidamente, un objetivo secundario es mostrar a las personas que pueden realizar para contribuir en la recuperación de los bosques
